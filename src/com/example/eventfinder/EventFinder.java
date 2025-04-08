@@ -5,9 +5,4 @@ public class EventFinder {
 
     }
 
-    public boolean addEvent(String name, String location){
-        if (name == null) return false;
-        if (location == null) return false;
-        return true;
-    }
 }
