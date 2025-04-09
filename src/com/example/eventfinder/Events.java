@@ -26,7 +26,7 @@ public class Events {
         if(name == null){
            throw new IllegalArgumentException("Name can't be null");
         }
-        if(name.length() > 30 || name.length() < 1){
+        if(name.length() > 30 || name.isEmpty()){
             throw new IllegalArgumentException("Name must be between 1 and 30 characters");
         }
         this.name = name;
@@ -38,7 +38,7 @@ public class Events {
         this.location = location;
     }
     public void setEventID(int eventID){
-        if(eventID < 0 && eventID > 100){
+        if(eventID < 0 || eventID > 100){
             throw new IllegalArgumentException("Event ID must be between 1 and 100");
         }
         this.eventID = eventID;
