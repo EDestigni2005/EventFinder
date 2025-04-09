@@ -30,4 +30,8 @@ public class EventFinder {
         }
     }
 
+    public int getEventCount(){
+        return eventList.size();
+    }
+
 }

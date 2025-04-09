@@ -5,10 +5,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class EventFinderTest {
-
+    EventFinder finder = new EventFinder();
     @Test
     void testAddEvent() {
-        EventFinder finder = new EventFinder();
 
         boolean result = finder.addEvent("Carnival", "Brazil", 1);
         assertTrue(result, "This should return true");
@@ -21,5 +20,16 @@ class EventFinderTest {
 
         boolean result4 = finder.addEvent("Magic Mike", "Student Union", 2);
         assertFalse(result4, "Checks duplication should return false");
+    }
+
+    @Test
+    void testGetEventCount(){
+
+        finder.addEvent("Event1", "Location1", 10);
+        finder.addEvent("Event2", "Location2", 20);
+        finder.addEvent("Event3", "Location3", 30);
+
+        int result = finder.getEventCount();
+        assertEquals(3, result);
     }
 }
